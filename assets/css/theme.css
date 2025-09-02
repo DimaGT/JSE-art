@@ -5,7 +5,7 @@
 *
 * Body Font (global): 'Poppins', sans-serif;
 * Secondary Font: 'Syne', sans-serif;
-* Main color:  #d19d00;
+* Main color:  rgb(241 245 81);
 -------------------------------------------------------------------- */
 
 
@@ -80,7 +80,7 @@
 
 :root {
 	--tt-main-bg-color: #0a0a0a; /* Template background color. */
-	--tt-main-color: #d19d00; /* Template main color. */
+	--tt-main-color: rgb(241 245 81); /* Template main color. */
 }
 
 
@@ -210,6 +210,48 @@ hr {
  * Fonts
 /* ------------------------------------------------------------- */
 
+/* AktivGrotesk Font Family
+============================= */
+@font-face {
+	font-family: 'AktivGrotesk';
+	src: url('../font/AktivGrotesk-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'AktivGrotesk';
+	src: url('../font/AktivGrotesk-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'AktivGrotesk';
+	src: url('../font/AktivGrotesk-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'AktivGrotesk';
+	src: url('../font/AktivGrotesk-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'AktivGrotesk';
+	src: url('../font/AktivGrotesk-Italic.ttf') format('truetype');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
 /* Body font
 ============= */
 body {
@@ -219,7 +261,7 @@ body {
 
 /* Secondary font
 ================== */
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6,
+
 #ball,
 .ptr-prel-content,
 .ph-caption-title-ghost,
@@ -262,10 +304,13 @@ body {
 .tt-scrolling-btn,
 #blog-list.bli-compact .bli-info::before,
 .footer-social-text {
-	font-family: 'Syne', sans-serif;
+	font-family: 'AktivGrotesk', sans-serif;
 }
 
-
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'AktivGrotesk', sans-serif !important;
+}
 /* ------------------------------------------------------------- *
  * Page transitions
 /* ------------------------------------------------------------- */
@@ -4802,6 +4847,7 @@ body.pi-full-on:not(.page-header-on) .portfolio-interactive-ghost {
 	opacity: .5;
 	z-index: 2;
 	transition: opacity .3s;
+	display: none
 }
 @media (max-width: 1024px) {
 	.pspl-item-title-link::before {
@@ -10305,3 +10351,12 @@ body:not(.is-mobile) .tt-style-switch:hover {
 	filter: grayscale(0%) brightness(1);
 }
 
+
+.bg-paint {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	object-fit: cover;
+	object-position: 50% 50%;
+}

@@ -145,6 +145,11 @@
 				 	}
 				 }
 				 
+				 // Background paint animation
+				 if ($("#bg-paint").length) {
+				 	tl_transitOut.from("#bg-paint", { duration: 2.5, yPercent: -100, skewX: 140, autoAlpha: 0, ease: Expo.easeOut, clearProps:"all" }, 0.5);
+				 }
+				 
 				 // Page header elements appear (elements with class "ph-appear")
 				 var $phAppear = $(".ph-appear");
 				 if ($phAppear.length) {
@@ -575,6 +580,7 @@
 		return false;
 	});
 
+	
 	// Append element if link href contains #
  	$('.tt-submenu-trigger > a[href="#"]').parent(".tt-submenu-trigger").append('<span class="tt-submenu-trigger-m"></span>');
 
@@ -3367,7 +3373,7 @@
 		"align-items": "center",
 		"right": "15px",
 		"bottom": "15px",
-		"background": "#d19d00",
+		"background": "rgb(241 245 81)",
 		"color": "#fff",
 		"z-index": "99999",
 		"overflow": "hidden",
@@ -3436,6 +3442,8 @@ $("#menu-toggle-btn-wrap, #menu-toggle-btn-holder").css({
 
 // Show elements on click or after delay
 $(document).ready(function() {
+    
+
     
     // Set timeout to show elements after 3 seconds if no click
     var timeout = setTimeout(function() {
