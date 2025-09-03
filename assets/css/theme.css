@@ -68,6 +68,7 @@
 * Blog carousel
 * Footer
 * If background is light
+* Blog category tabs
 */ 
 
 
@@ -7249,10 +7250,10 @@ button {
 }
 .tt-btn-primary > *,
 .tt-btn-primary > *::after {
-	color: #FFF;
+	color: #000;
 }
 .tt-btn-primary:hover > * {
-	color: #FFF;
+	color: #000;
 }
 
 /* Button primary outline */
@@ -9532,6 +9533,111 @@ body.tt-boxed .blog-single-inner.tt-wrap {
 	.tt-comment-reply {
 		top: 0;
 		right: 0;
+	}
+}
+
+/* ------------------------------------------------------------- *
+ * Blog category tabs
+/* ------------------------------------------------------------- */
+
+.blog-category-tabs {
+	margin-bottom: 60px;
+	text-align: center;
+}
+
+.tabs-container {
+	display: inline-flex;
+	background-color: rgba(255, 255, 255, 0.05);
+	border-radius: 50px;
+	padding: 8px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tab-btn {
+	background: none;
+	border: none;
+	color: rgba(255, 255, 255, 0.7);
+	padding: 12px 24px;
+	border-radius: 40px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-family: 'Poppins', sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	position: relative;
+	overflow: hidden;
+}
+
+.tab-btn::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--tt-main-color);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	border-radius: 40px;
+}
+
+.tab-btn:hover {
+	color: #fff;
+}
+
+.tab-btn:hover::before {
+	opacity: 0.1;
+}
+
+.tab-btn.active {
+	background-color: var(--tt-main-color);
+	color: #000;
+	box-shadow: 0 4px 20px rgba(241, 245, 81, 0.3);
+}
+
+.tab-btn.active::before {
+	opacity: 0;
+}
+
+.tab-text {
+	position: relative;
+	z-index: 1;
+}
+
+/* Hide blog posts based on category */
+.blog-list-item[data-category] {
+	transition: all 0.4s ease;
+}
+
+.blog-list-item.hidden {
+	opacity: 0;
+	transform: translateY(20px);
+	pointer-events: none;
+	height: 0;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+/* Responsive design for tabs */
+@media (max-width: 768px) {
+	.tabs-container {
+		flex-direction: column;
+		border-radius: 20px;
+		padding: 6px;
+	}
+	
+	.tab-btn {
+		border-radius: 15px;
+		margin: 2px 0;
+		padding: 10px 20px;
+		font-size: 13px;
+	}
+	
+	.blog-category-tabs {
+		margin-bottom: 40px;
 	}
 }
 .tt-comment-reply a {

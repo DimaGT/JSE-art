@@ -3478,4 +3478,50 @@ $(document).ready(function() {
 
 
 
+	// ================================================================
+	// Blog category tabs functionality
+	// ================================================================
+
+	// Blog category tabs
+	if ($(".blog-category-tabs").length) {
+		const $tabBtns = $(".tab-btn");
+		const $blogItems = $(".blog-list-item");
+		
+		$tabBtns.on("click", function() {
+			const $this = $(this);
+			const category = $this.data("category");
+			
+			// Remove active class from all tabs
+			$tabBtns.removeClass("active");
+			// Add active class to clicked tab
+			$this.addClass("active");
+			
+			// Show/hide blog items based on category
+			if (category === "all") {
+				// Show all items
+				$blogItems.removeClass("hidden").show();
+			} else {
+				// Hide all items first
+				$blogItems.addClass("hidden").hide();
+				// Show only items with matching category
+				$blogItems.filter(`[data-category="${category}"]`).removeClass("hidden").show();
+			}
+			
+			// Smooth animation for items
+			$blogItems.not(".hidden").each(function(index) {
+				const $item = $(this);
+				setTimeout(() => {
+					$item.css({
+						"opacity": "0",
+						"transform": "translateY(20px)"
+					}).animate({
+						opacity: 1
+					}, 300, function() {
+						$item.css("transform", "translateY(0)");
+					});
+				}, index * 100);
+			});
+		});
+	}
+
 })(jQuery); 
