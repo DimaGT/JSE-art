@@ -1538,6 +1538,10 @@ body.tt-smooth-scroll.tt-ol-menu-open .scrollbar-track {
     margin-bottom: 15px;
     margin-right: 0;
   }
+
+  .font-gallery {
+    margin-bottom: 18px;
+  }
 }
 .tt-ol-menu-list > li:first-child {
   margin-top: 0;
