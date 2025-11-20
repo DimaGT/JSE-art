@@ -1,0 +1,1175 @@
+<html lang="en">
+
+<head>
+
+  <!-- Title -->
+  <title>Contact | JSE art</title>
+
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta name="description" content="JSE art">
+  <meta name="author" content="JSE art">
+  <!-- Mobile Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Favicon (http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Google Analytics -->
+  <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-S1BBE4FJ4H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-S1BBE4FJ4H');
+  </script>
+
+  <!-- Google fonts (https://www.google.com/fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet"> <!-- Body font -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <!-- Secondary/Alter font -->
+
+  <!-- Libs and Plugins CSS -->
+  <link rel="stylesheet" href="assets/vendor/normalize/normalize.min.css">
+  <!-- Normalize CSS (https://necolas.github.io/normalize.css/) -->
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/fontawesome-all.min.css">
+  <!-- Font Icons CSS (https://fontawesome.com) Free version! -->
+  <link rel="stylesheet" href="assets/vendor/swiper/css/swiper-bundle.min.css">
+  <!-- Swiper CSS (https://swiperjs.com/) -->
+  <link rel="stylesheet" href="assets/vendor/lightgallery/css/lightgallery.min.css">
+  <!-- lightGallery CSS (http://sachinchoolur.github.io/lightGallery) -->
+
+  <!-- Template master CSS -->
+  <link rel="stylesheet" href="assets/css/helper.css">
+  <link id="tt-themecss" rel="stylesheet" href="assets/css/theme.css">
+
+  <!-- Custom Toast Notification Styles -->
+  <style>
+    .toast-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 10000;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      pointer-events: none;
+    }
+
+    .toast {
+      min-width: 320px;
+      max-width: 420px;
+      padding: 18px 22px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      opacity: 0;
+      transform: translateX(450px);
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      pointer-events: auto;
+      border-left: 4px solid;
+      backdrop-filter: blur(10px);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .toast.success {
+      border-left-color: #10b981;
+      background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+    }
+
+    .toast.error {
+      border-left-color: #ef4444;
+      background: linear-gradient(135deg, #ffffff 0%, #fef2f2 100%);
+    }
+
+    .toast.warning {
+      border-left-color: #f59e0b;
+      background: linear-gradient(135deg, #ffffff 0%, #fffbeb 100%);
+    }
+
+    .toast-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .toast.success .toast-icon {
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.1);
+    }
+
+    .toast.error .toast-icon {
+      color: #ef4444;
+      background: rgba(239, 68, 68, 0.1);
+    }
+
+    .toast.warning .toast-icon {
+      color: #f59e0b;
+      background: rgba(245, 158, 11, 0.1);
+    }
+
+    .toast-content {
+      flex: 1;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #1f2937;
+      font-weight: 500;
+    }
+
+    .toast-close {
+      background: none;
+      border: none;
+      font-size: 20px;
+      color: #9ca3af;
+      cursor: pointer;
+      padding: 0;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.2s;
+      border-radius: 4px;
+    }
+
+    .toast-close:hover {
+      color: #374151;
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    /* Dark theme support */
+    body.tt-dark .toast {
+      background: #1f2937;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    body.tt-dark .toast.success {
+      background: linear-gradient(135deg, #1f2937 0%, #064e3b 100%);
+    }
+
+    body.tt-dark .toast.error {
+      background: linear-gradient(135deg, #1f2937 0%, #7f1d1d 100%);
+    }
+
+    body.tt-dark .toast.warning {
+      background: linear-gradient(135deg, #1f2937 0%, #78350f 100%);
+    }
+
+    body.tt-dark .toast-content {
+      color: #f9fafb;
+    }
+
+    body.tt-dark .toast-icon {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    body.tt-dark .toast-close {
+      color: #9ca3af;
+    }
+
+    body.tt-dark .toast-close:hover {
+      color: #f9fafb;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .toast-container {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+      }
+
+      .toast {
+        min-width: auto;
+        max-width: 100%;
+        transform: translateY(-100px);
+      }
+
+      .toast.show {
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+</head>
+
+
+<!-- ===========
+    ///// Body /////
+    ================
+    * Use class "tt-boxed" to enable page boxed layout globally (affects all elements containing class "tt-wrap").
+    * Use class "tt-smooth-scroll" to enable page smooth scrolling.
+    * Use class "tt-transition" to enable page transitions.
+    * Use class "tt-magic-cursor" to enable magic cursor.
+    * Note: there may be classes that are specific to this page only!
+    -->
+
+<body id="body"
+  class="tt-transition tt-boxed tt-smooth-scroll tt-magic-cursor tt-header-fixed-on page-header-on tt-ph-visible">
+
+
+  <!-- *************************************
+      *********** Begin body inner ************* 
+      ************************************** -->
+  <main id="body-inner">
+
+
+    <!-- Begin page transition (do not remove!!!) 
+        =========================== -->
+    <div id="page-transition">
+      <div class="ptr-overlay"
+        style="translate: none; rotate: none; scale: none; transform-origin: 50% 0%; transform: scale(1, 0);"></div>
+      <div class="ptr-preloader" style="opacity: 0; visibility: hidden;">
+        <div class="ptr-prel-content">
+          <!-- Hint: You may need to change the img height and opacity to match your logo type. You can do this from the "theme.css" file (find: ".ptr-prel-image"). -->
+          <img src="assets/img/logo-light.png" class="ptr-prel-image tt-logo-light" alt="Logo">
+        </div> <!-- /.ptr-prel-content -->
+      </div> <!-- /.ptr-preloader -->
+    </div>
+    <!-- End page transition -->
+
+    <!-- Begin magic cursor 
+        ======================== -->
+    <div id="magic-cursor" style="opacity: 1; visibility: inherit;">
+      <div id="ball"
+        style="translate: none; rotate: none; scale: none; opacity: 0.5; border-width: 2px; height: 36px; width: 36px; transform: translate(-50%, -50%) translate(996px, 717px);">
+      </div>
+    </div>
+    <!-- End magic cursor -->
+
+
+    <!-- *****************************************
+        *********** Begin scroll container *********** 
+        ****************************************** -->
+    <header id="tt-header" class="tt-header-fixed">
+      <div class="tt-header-inner">
+        <!-- add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag!). Note: additionally you can use prepared helper class "max-width-*" to add custom width to "tt-wrap". Example: "max-width-1500" (class "tt-wrap" is still required!). More info about helper classes can be found in the file "helper.css". -->
+
+        <div class="tt-header-col">
+
+          <!-- Begin logo 
+                ================ -->
+          <div class="tt-logo">
+            <a href="index.html">
+              <!-- Hint: You may need to change the img height to match your logo type. You can do this from the "theme.css" file (find: ".tt-logo img"). -->
+              <img src="assets/img/logo-light.png" class="tt-logo-light magnetic-item" alt="Logo"> <!-- logo light -->
+              <img src="assets/img/logo-dark.png" class="tt-logo-dark magnetic-item" alt="Logo"> <!-- logo dark -->
+            </a>
+          </div>
+          <!-- End logo -->
+
+        </div> <!-- /.tt-header-col -->
+
+        <div class="tt-header-col">
+
+          <!-- Begin overlay menu toggle button -->
+          <div id="tt-ol-menu-toggle-btn-wrap">
+            <div class="tt-ol-menu-toggle-btn-text-wrap hide-cursor">
+              <div class="tt-ol-menu-toggle-btn-text">
+                <span class="text-menu" data-hover="Open">Menu</span>
+                <span class="text-close">Close</span>
+              </div> <!-- /.tt-ol-menu-toggle-btn-text -->
+            </div> <!-- /.tt-ol-menu-toggle-btn-text-wrap -->
+            <div class="tt-ol-menu-toggle-btn-holder">
+              <a href="#" class="tt-ol-menu-toggle-btn magnetic-item"><span></span></a>
+            </div> <!-- /.tt-ol-menu-toggle-btn-holder -->
+          </div>
+          <!-- End overlay menu toggle button -->
+
+          <!-- Begin overlay menu 
+                ======================== 
+                * Use class "tt-ol-menu-count" to enable menu counter.
+                -->
+          <nav class="tt-overlay-menu tt-ol-menu-count">
+            <div class="tt-ol-menu-ghost">Explore</div>
+            <div class="tt-ol-menu-holder">
+              <div class="tt-ol-menu-inner tt-wrap">
+                <div class="tt-ol-menu-content">
+
+                  <!-- Begin menu list -->
+                  <ul class="tt-ol-menu-list">
+
+                    <li><a href="./">Home</a></li>
+
+                    <!-- Begin submenu (submenu master)
+                                ==================================== -->
+                    <li><a href="./about-me.html">About</a></li>
+                    <!-- End submenu (sub-master) -->
+
+                    <!-- Begin submenu (submenu master)
+                                ==================================== -->
+                    <li><a href="./gallery.html">Gallery</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+
+                    <!-- End submenu (sub-master) -->
+
+                    <!-- Begin submenu (submenu master)
+                                ==================================== -->
+                    <!-- <li><a href="./blog.html">Blog</a></li> -->
+                    <!-- End submenu (sub-master) -->
+                  </ul>
+                  <!-- End menu list -->
+
+                  <!-- Begin overlay menu social links 
+                              ===================================== -->
+                  <ul class="tt-ol-menu-social">
+                    <li>
+                      <h6 class="tt-ol-menu-social-heading">Social Links:</h6>
+                    </li>
+                    <li><a href="https://www.instagram.com/jse.art" target="_blank" rel="noopener">Instagram</a>
+                    </li>
+                  </ul>
+                  <!-- End overlay menu social links -->
+
+                </div> <!-- /.tt-ol-menu-content -->
+              </div> <!-- /.tt-ol-menu-inner -->
+            </div> <!-- /.tt-ol-menu-holder -->
+          </nav>
+          <!-- End overlay menu -->
+
+        </div> <!-- /.header-col -->
+      </div> <!-- /.header-inner -->
+    </header>
+    <div id="scroll-container" data-scrollbar="true" tabindex="-1" style="overflow: hidden; outline: none;">
+      <div class="scroll-content" style="transform: translate3d(0px, 0px, 0px);">
+
+        <!-- ===================
+          ///// Begin header /////
+          ========================
+          * Use class "tt-header-fixed" to set header to fixed position.
+          -->
+
+        <!-- End header -->
+
+
+        <!-- *************************************
+          *********** Begin content wrap *********** 
+          ************************************** -->
+        <div id="content-wrap">
+
+
+          <!-- ========================
+            ///// Begin page header /////
+            ============================= 
+            * Use class "ph-full" to enable fullscreen size (no effect on smaller screens!).
+            * Use class "ph-cap-sm", "ph-cap-lg", "ph-cap-xlg" or "ph-cap-xxlg" to set caption size (no class = default size).
+            * Use class "ph-center" to enable content center position.
+            * Use class "ph-image-cropped" to crop image (if image is used). It uses fixed image dimensions (no effect with class "ph-bg-image"!).
+            * Use class "ph-bg-image" to enable page header background image. Note: "ph-caption-title-ghost" will be disabled if you enable this option!
+            * Use class "ph-bg-image-is-light" if needed, it makes the elements dark and more visible if you use a very light background image (effect only with class "ph-bg-image").
+            * Use class "ph-image-cover-*" to set image overlay opacity. For example "ph-image-cover-2" or "ph-image-cover-2-5" (up to "ph-image-cover-9-5").
+            * Use class "ph-content-parallax" to enable content parallax.
+            * Use class "ph-stroke" to enable caption title stroke style.
+            * Use class "ph-ghost-scroll" to enable the scroll effect to caption title ghost (no effect with class "ph-center"!).
+            -->
+          <div id="page-header" class="ph-cap-lg ph-ghost-scroll ph-image-cropped ph-image-cover-2 ph-content-parallax">
+            <div class="page-header-inner tt-wrap">
+
+              <!-- Begin page header image 
+                ============================= -->
+              <!-- <div class="ph-image">
+                  <div class="ph-image-inner">
+                    <img src="assets/img/page-header/ph-3.jpg" alt="Image">
+                  </div>
+                </div> -->
+              <!-- End page header image -->
+
+              <!-- Begin page header caption
+                =============================== 
+                Use class "max-width-*" to set caption max width if needed. For example "max-width-1000". More info about helper classes can be found in the file "helper.css".
+                -->
+              <div class="ph-caption">
+                <div class="ph-caption-subtitle"
+                  style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                  <div class="ph-appear" style="">Let's Talk</div>
+                </div>
+                <h1 class="ph-caption-title"
+                  style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                  <div class="ph-appear" style="">Contact</div>
+                </h1>
+
+              </div>
+              <!-- End page header caption -->
+
+            </div> <!-- /.page-header-inner -->
+
+            <!-- Begin scroll down (you can change "data-offset" to set scroll top offset) 
+              ======================= -->
+            <div class="tt-scroll-down" style="opacity: 1; visibility: inherit;">
+
+              <a href="#page-content" class="tt-sd-inner ph-appear" data-offset="0" style="">
+                <div class="tt-sd-arrow">
+                  <div class="tt-sd-arrow-inner"></div>
+                </div>
+                <div class="tt-sd-text">Scroll</div>
+              </a>
+            </div>
+            <!-- End scroll down -->
+
+          </div>
+          <!-- End page header -->
+
+
+          <!-- *************************************
+            *********** Begin page content *********** 
+            ************************************** -->
+          <div id="page-content" style="">
+
+
+            <!-- =======================
+              ///// Begin tt-section /////
+              ============================ 
+              * You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
+              -->
+            <div class="tt-section">
+              <div class="tt-section-inner tt-wrap">
+
+                <div class="tt-row tt-lg-row-reverse">
+                  <div class="tt-col-lg-4">
+
+                    <!-- Begin tt-Heading 
+                      ====================== 
+                      * Use class "tt-heading-xsm", "tt-heading-sm", "tt-heading-lg", "tt-heading-xlg" or "tt-heading-xxlg" to set caption size (no class = default size).
+                      * Use class "tt-heading-stroke" to enable stroke style.
+                      * Use class "tt-heading-center" to align tt-Heading to center.
+                      * Use prepared helper class "max-width-*" to add custom width if needed. Example: "max-width-800". More info about helper classes can be found in the file "helper.css".
+                      -->
+                    <div class="tt-heading margin-bottom-8-p anim-fadeinup" style="">
+                      <!-- <h3 class="tt-heading-subtitle text-gray">Subtitle</h3> -->
+                      <h3 class="tt-heading-title" style='font-size: 40px;'>Thank you for visiting JSE Gallery.</h3>
+                      <!-- You can use <br> to break a text line if needed -->
+                    </div>
+                    <!-- End tt-Heading -->
+
+
+                    <!-- Begin contact info 
+                      ======================== -->
+                    <ul class="tt-contact-info padding-bottom-40 anim-fadeinup" style="">
+
+                      <li class="margin-bottom-40">
+                        <p class="margin-bottom-15 text-gray">For press, commissions, and general information, please
+                          email</p>
+                        <a href="mailto:info@jse.art" class="tt-link">
+                          <span class="tt-ci-icon"><i class="fas fa-envelope"></i></span>
+                          info@jse.art
+                        </a>
+                      </li>
+                      <li class="margin-bottom-40">
+                        <p class="margin-bottom-15 text-gray">For collaborations, exhibition opportunities, or
+                          partnership discussions, please contact Stella Bulwer, Studio Manager:</p>
+                        <a href="mailto:stella@jse.art" class="tt-link">
+                          <span class="tt-ci-icon"><i class="fas fa-envelope"></i></span>
+                          stella@jse.art
+                        </a>
+                      </li>
+                      <li class="margin-bottom-40">
+                        <p class="margin-bottom-15 text-gray">For personal messages or collector correspondence, you can
+                          reach me directly at</p>
+                        <a href="mailto:elise@jse.art" class="tt-link">
+                          <span class="tt-ci-icon"><i class="fas fa-envelope"></i></span>
+                          elise@jse.art
+                        </a>
+                      </li>
+                      <li class="margin-bottom-40">
+                        <span class="tt-ci-icon"><i class="fas fa-map-marker-alt"></i></span>
+                        Based in San Francisco, California
+                      </li>
+                    </ul>
+                    <!-- End contact info -->
+
+                  </div> <!-- /.tt-col -->
+
+                  <div class="tt-col-lg-1">
+                  </div> <!-- /.tt-col -->
+
+                  <div class="tt-col-lg-7">
+
+                    <!-- Begin Studio Forms Section -->
+                    <div class="studio-forms-intro margin-bottom-50 anim-fadeinup" style="">
+                      <h2 class="tt-heading-title margin-bottom-20">Studio Forms</h2>
+                      <p class="text-gray margin-bottom-30" style="font-size: 16px; line-height: 1.6;">
+                        Each form below is designed to help us manage your inquiry with care and precision. Whether
+                        you're commissioning a new work, proposing a collaboration, or requesting documentation, please
+                        select the option that best fits your needs.
+                      </p>
+                      <p class="text-gray margin-bottom-40" style="font-size: 16px; line-height: 1.6;">
+                        Every submission is reviewed by the studio, and we aim to respond within a few business days.
+                      </p>
+
+                      <!-- Form Type Selector -->
+                      <div class="tt-form-group margin-bottom-40">
+                        <label>Select Form Type <span class="required">*</span></label>
+                        <select id="form-type-selector" class="tt-form-control" required="" style='padding-right: 40px'>
+                          <option value="" selected="">Please choose a form type</option>
+                          <option value="general">General Inquiry Form</option>
+                          <option value="commission">Custom Commission Form</option>
+                          <option value="appraisal">Artwork Appraisal & Documentation Form</option>
+                          <option value="registry">Collector Registry Enrollment Form</option>
+                        </select>
+                      </div>
+
+                      <!-- Form Descriptions (Hidden by default, shown based on selection) -->
+                      <div id="form-descriptions" class="form-descriptions margin-bottom-40" style="display: none;">
+                        <!-- General Inquiry Form Description -->
+                        <div id="desc-general" class="form-description" style="display: none;">
+                          <p class="text-gray" style="font-size: 15px; line-height: 1.6;">
+                            For any inquiries that don't fall under the categories above. This form connects to
+                            info@jse.art and ensures your message reaches the right member of the studio team.
+                          </p>
+                        </div>
+
+                        <!-- Custom Commission Form Description -->
+                        <div id="desc-commission" class="form-description" style="display: none;">
+                          <p class="text-gray" style="font-size: 15px; line-height: 1.6;">
+                            For collectors or individuals interested in commissioning a custom artwork. This form will
+                            guide you through providing details such as purpose, recipient, size, medium, and display
+                            context, as well as COA registration and ownership preferences.
+                          </p>
+                        </div>
+
+                        <!-- Appraisal Form Description -->
+                        <div id="desc-appraisal" class="form-description" style="display: none;">
+                          <p class="text-gray" style="font-size: 15px; line-height: 1.6;">
+                            For collectors who already own a JSE piece and wish to update its valuation or reissue its
+                            Certificate of Authenticity (COA).
+                          </p>
+                        </div>
+
+                        <!-- Registry Form Description -->
+                        <div id="desc-registry" class="form-description" style="display: none;">
+                          <p class="text-gray" style="font-size: 15px; line-height: 1.6;">
+                            For verified collectors who wish to be added to the official JSE archive. Registry members
+                            receive documentation support, invitations to upcoming shows, and access to optional annual
+                            appraisals.
+                          </p>
+                        </div>
+                      </div>
+
+                      <!-- Divider -->
+                      <div class="form-divider margin-top-40 margin-bottom-50"
+                        style="height: 1px; background: rgba(255, 255, 255, 0.1);"></div>
+                    </div>
+                    <!-- End Studio Forms Section -->
+
+                    <!-- Begin Forms Container -->
+                    <div id="forms-container">
+
+                      <!-- General Inquiry Form -->
+                      <form id="form-general" class="studio-form tt-form-filled" style="display: none;">
+                        <div class="tt-row">
+                          <div class="tt-col-md-6">
+                            <div class="tt-form-group">
+                              <label>Your Name <span class="required">*</span></label>
+                              <input class="tt-form-control" type="text" name="name" placeholder="" required="">
+                            </div>
+                          </div>
+                          <div class="tt-col-md-6">
+                            <div class="tt-form-group">
+                              <label>Email address <span class="required">*</span></label>
+                              <input class="tt-form-control" type="email" name="email" placeholder="" required="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tt-form-group">
+                          <label>Subject <span class="required">*</span></label>
+                          <input class="tt-form-control" type="text" name="subject" placeholder="" required="">
+                        </div>
+                        <div class="tt-form-group">
+                          <label>Your Message <span class="required">*</span></label>
+                          <textarea class="tt-form-control" rows="5" name="message" placeholder=""
+                            required=""></textarea>
+                        </div>
+                        <small class="tt-form-text"><em>Fields marked with an asterisk (*) are required!</em></small>
+                        <button type="submit" class="tt-btn tt-btn-primary margin-top-30">
+                          <div data-hover="Send Message">Send Message</div>
+                          <span class="tt-btn-icon"><i class="fas fa-paper-plane"></i></span>
+                        </button>
+                      </form>
+
+                      <!-- Custom Commission Form -->
+                      <form id="form-commission" class="studio-form tt-form-filled" style="display: none;">
+                        <div class="tt-row">
+                          <div class="tt-col-md-6">
+                            <div class="tt-form-group">
+                              <label>Your Name <span class="required">*</span></label>
+                              <input class="tt-form-control" type="text" name="name" placeholder="" required="">
+                            </div>
+                          </div>
+                          <div class="tt-col-md-6">
+                            <div class="tt-form-group">
+                              <label>Email address <span class="required">*</span></label>
+                              <input class="tt-form-control" type="email" name="email" placeholder="" required="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tt-form-group">
+                          <label>Purpose <span class="required">*</span></label>
+                          <input class="tt-form-control" type="text" name="purpose"
+                            placeholder="e.g., Personal collection, Corporate gift, etc." required="">
+                        </div>
+                        <div class="tt-form-group">
+                          <label>Recipient <span class="required">*</span></label>
+                          <input class="tt-form-control" type="text" name="recipient"
+                            placeholder="Who is this artwork for?" required="">
+                        </div>
+                        <div class="tt-row">
+                          <div class="tt-col-md-6">
+                            <div class="tt-form-group">
+                              <label>Size <span class="required">*</span></label>
+                              <input class="tt-form-control" type="text" name="size" placeholder="e.g., 24x36 inches"
+                                required="">
+                            </div>
+                          </div>
+                          <div class="tt-col-md-6">
+                            <div class="tt-form-group">
+                              <label>Medium <span class="required">*</span></label>
+                              <input class="tt-form-control" type="text" name="medium"
+                                placeholder="e.g., Oil on canvas, Digital print" required="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tt-form-group">
+                          <label>Display Context <span class="required">*</span></label>
+                          <textarea class="tt-form-control" rows="3" name="display_context"
+                            placeholder="Where will this artwork be displayed?" required=""></textarea>
+                        </div>
+                        <div class="tt-form-group">
+                          <label>COA Registration Preference <span class="required">*</span></label>
+                          <select class="tt-form-control" name="coa_registration" required="">
+                            <option value=""  selected="">Please choose an option</option>
+                            <option value="Yes">Yes, I want COA registration</option>
+                            <option value="No">No, I don't need COA registration</option>
+                          </select>
+                        </div>
+                        <div class="tt-form-group">
+                          <label>Ownership Preferences <span class="required">*</span></label>
+                          <select class="tt-form-control" name="ownership_preference" required="">
+                            <option value="" selected="">Please choose an option</option>
+                            <option value="Sole ownership">Sole ownership</option>
+                            <option value="Shared ownership">Shared ownership</option>
+                            <option value="Corporate ownership">Corporate ownership</option>
+                          </select>
+                        </div>
+                        <div class="tt-form-group">
+                          <label>Additional Notes</label>
+                          <textarea class="tt-form-control" rows="4" name="additional_notes"
+                            placeholder="Any additional information or special requests"></textarea>
+                        </div>
+                        <small class="tt-form-text"><em>Fields marked with an asterisk (*) are required!</em></small>
+                        <button type="submit" class="tt-btn tt-btn-primary margin-top-30">
+                          <div data-hover="Submit Commission Request">Submit Commission Request</div>
+                          <span class="tt-btn-icon"><i class="fas fa-paper-plane"></i></span>
+                        </button>
+                      </form>
+
+                      <!-- Artwork Appraisal & Documentation Form -->
+                      <form id="form-appraisal" class="studio-form tt-form-filled" style="display: none;">
+                        <div class="tt-row">
+                          <div class="tt-col-md-6">
+                            <div class="tt-form-group">
+                              <label>Collector Name <span class="required">*</span></label>
+                              <input class="tt-form-control" type="text" name="collector_name" placeholder=""
+                                required="">
+                            </div>
+                          </div>
+                          <div class="tt-col-md-6">
+                            <div class="tt-form-group">
+                              <label>Email address <span class="required">*</span></label>
+                              <input class="tt-form-control" type="email" name="email" placeholder="" required="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tt-row">
+                          <div class="tt-col-md-6">
+                            <div class="tt-form-group">
+                              <label>Phone Number</label>
+                              <input class="tt-form-control" type="tel" name="phone" placeholder="">
+                            </div>
+                          </div>
+                          <div class="tt-col-md-6">
+                            <div class="tt-form-group">
+                              <label>Artwork Title or Serial Number <span class="required">*</span></label>
+                              <input class="tt-form-control" type="text" name="artwork_title" placeholder=""
+                                required="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tt-form-group">
+                          <label>Upload Proof of Purchase or Previous COA</label>
+                          <input class="tt-form-control" type="file" name="proof_file"
+                            accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+                          <small class="tt-form-text">Accepted formats: PDF, JPG, PNG, DOC, DOCX (Max 10MB)</small>
+                        </div>
+                        <div class="tt-form-group">
+                          <label>Condition Notes <span class="required">*</span></label>
+                          <textarea class="tt-form-control" rows="4" name="condition_notes"
+                            placeholder="Describe the current condition of the artwork" required=""></textarea>
+                        </div>
+                        <div class="tt-form-group">
+                          <label>Purpose of Appraisal <span class="required">*</span></label>
+                          <select class="tt-form-control" name="appraisal_purpose" required="">
+                            <option value=""  selected="">Please choose an option</option>
+                            <option value="Insurance">Insurance</option>
+                            <option value="Exhibition">Exhibition</option>
+                            <option value="Sale">Sale</option>
+                            <option value="Documentation">Documentation update</option>
+                            <option value="Other">Other</option>
+                          </select>
+                        </div>
+                        <div class="tt-form-group">
+                          <label>Additional Information</label>
+                          <textarea class="tt-form-control" rows="3" name="additional_info"
+                            placeholder="Any additional information about the artwork"></textarea>
+                        </div>
+                        <small class="tt-form-text"><em>Fields marked with an asterisk (*) are required!</em></small>
+                        <button type="submit" class="tt-btn tt-btn-primary margin-top-30">
+                          <div data-hover="Submit Appraisal Request">Submit Appraisal Request</div>
+                          <span class="tt-btn-icon"><i class="fas fa-paper-plane"></i></span>
+                        </button>
+                      </form>
+
+                      <!-- Collector Registry Enrollment Form -->
+                      <form id="form-registry" class="studio-form tt-form-filled" style="display: none;">
+                        <div class="tt-row">
+                          <div class="tt-col-md-6">
+                            <div class="tt-form-group">
+                              <label>Collector Name <span class="required">*</span></label>
+                              <input class="tt-form-control" type="text" name="collector_name" placeholder=""
+                                required="">
+                            </div>
+                          </div>
+                          <div class="tt-col-md-6">
+                            <div class="tt-form-group">
+                              <label>Email address <span class="required">*</span></label>
+                              <input class="tt-form-control" type="email" name="email" placeholder="" required="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tt-row">
+                          <div class="tt-col-md-6">
+                            <div class="tt-form-group">
+                              <label>Phone Number</label>
+                              <input class="tt-form-control" type="tel" name="phone" placeholder="">
+                            </div>
+                          </div>
+                          <div class="tt-col-md-6">
+                            <div class="tt-form-group">
+                              <label>Address</label>
+                              <input class="tt-form-control" type="text" name="address" placeholder="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tt-form-group">
+                          <label>Owned Artwork Titles or Serial Numbers <span class="required">*</span></label>
+                          <textarea class="tt-form-control" rows="4" name="owned_artworks"
+                            placeholder="List all JSE artworks you own (titles or serial numbers)"
+                            required=""></textarea>
+                        </div>
+                        <div class="tt-form-group">
+                          <label>Consent for Inclusion in Registry <span class="required">*</span></label>
+                          <select class="tt-form-control" name="registry_consent" required="">
+                            <option value=""  selected="">Please choose an option</option>
+                            <option value="Public">Public - My name can be listed publicly</option>
+                            <option value="Anonymous">Anonymous - Include me but keep my name private</option>
+                            <option value="Opt-out">Opt-out - Do not include me in the registry</option>
+                          </select>
+                        </div>
+                        <div class="tt-form-group">
+                          <label>Opt-in for Annual Appraisal <span class="required">*</span></label>
+                          <select class="tt-form-control" name="annual_appraisal" required="">
+                            <option value=""   selected="">Please choose an option</option>
+                            <option value="Yes">Yes, I want annual appraisals</option>
+                            <option value="No">No, I don't need annual appraisals</option>
+                          </select>
+                        </div>
+                        <div class="tt-form-group">
+                          <label>Additional Notes</label>
+                          <textarea class="tt-form-control" rows="3" name="additional_notes"
+                            placeholder="Any additional information"></textarea>
+                        </div>
+                        <small class="tt-form-text"><em>Fields marked with an asterisk (*) are required!</em></small>
+                        <button type="submit" class="tt-btn tt-btn-primary margin-top-30">
+                          <div data-hover="Join Collector Registry">Join Collector Registry</div>
+                          <span class="tt-btn-icon"><i class="fas fa-paper-plane"></i></span>
+                        </button>
+                      </form>
+
+                    </div>
+                    <!-- End Forms Container -->
+
+                  </div> <!-- /.tt-col -->
+                </div> <!-- /.tt-row -->
+
+              </div> <!-- /.tt-section-inner -->
+            </div>
+            <!-- End tt-section -->
+
+
+            <!-- =======================
+              ///// Begin tt-section /////
+              ============================ 
+              * You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
+              -->
+            <div class="tt-section padding-bottom-xlg-150">
+              <div class="tt-section-inner tt-wrap">
+
+                <!-- Begin page nav 
+                  ==================== 
+                  * Use class "tt-pn-center" to align page nav to center.
+                  * Use class "tt-pn-stroke" to enable title stroke style.
+                  -->
+                <div class="tt-page-nav tt-pn-stroke">
+                  <a href="./gallery.html" class="tt-pn-link anim-fadeinup not-hide-cursor"
+                    data-cursor="&lt;i class='fas fa-arrow-right'&gt;&lt;/i&gt;" style="">
+                    <div class="tt-pn-title">Gallery</div>
+                    <div class="tt-pn-hover-title">Gallery</div>
+                  </a> <!-- /.tt-pn-link -->
+                  <div class="tt-pn-subtitle anim-fadeinup" style="">Enter Gallery</div>
+                </div>
+                <!-- End page nav -->
+
+              </div> <!-- /.tt-section-inner -->
+            </div>
+            <!-- End tt-section -->
+
+
+          </div>
+          <!-- End page content -->
+
+
+          <!-- ======================
+            ///// Begin tt-footer /////
+            =========================== -->
+          <footer id="tt-footer" style="">
+            <div class="tt-footer-inner">
+
+              <!-- Begin footer column 
+                ========================= -->
+              <div class="footer-col tt-align-center-left">
+                <div class="footer-col-inner">
+
+                  <a href="#" class="tt-btn tt-btn-link scroll-to-top">
+                    <span class="tt-btn-icon"><i class="fas fa-arrow-up"></i></span>
+                    <div data-hover="Back to Top">Back to Top</div>
+                  </a>
+
+                </div> <!-- /.footer-col-inner -->
+              </div>
+              <!-- Begin footer column -->
+
+              <!-- Begin footer column 
+                ========================= -->
+              <div class="footer-col tt-align-center order-m-last">
+                <div class="footer-col-inner">
+
+                  <div class="tt-copyright text-gray">
+                    <a href="./index.html" target="_blank" rel="noopener" class="tt-btn tt-btn-link">
+                      <span class="tt-btn-icon"><i class="far fa-copyright"></i></span>
+                      <div data-hover="JSE Gallery">JSE Gallery</div>
+                    </a>
+                  </div>
+
+                </div> <!-- /.footer-col-inner -->
+              </div>
+              <!-- Begin footer column -->
+              <div style='flex:1'> </div>
+              <!-- Begin footer column 
+                ========================= -->
+
+              <!-- Begin footer column -->
+
+            </div> <!-- /.tt-section-inner -->
+          </footer>
+          <!-- End tt-footer -->
+
+
+        </div>
+        <!-- End content wrap -->
+
+      </div>
+
+    </div>
+    <!-- End scroll container -->
+
+
+    <a href="https://1.envato.market/nui" class="tt-demo-btn" target="_blank" rel="noopener"
+      style="position: fixed; display: flex; align-items: center; right: 15px; bottom: 15px; background: rgb(177, 44, 13); color: rgb(255, 255, 255); z-index: 99999; overflow: hidden; opacity: 0; visibility: hidden; transform: scale(0.9); border-radius: 100px;">
+      <div class="tt-demo-btn-img" style="width: 60px; height: 60px; padding: 14px;"><img
+          src="https://stuff.themetorium.net/img/envato-logo-white.png" alt="Download!"></div>
+      <div class="tt-demo-btn-text"
+        style="width: 0px; overflow: hidden; white-space: nowrap; font-size: 15px; line-height: 1.3; color: rgb(255, 255, 255); opacity: 0; visibility: hidden;">
+        Buy This<br> Template!</div>
+    </a>
+  </main>
+  <!-- End body inner -->
+
+
+
+
+  <!-- ====================
+      ///// Scripts below /////
+      ===================== -->
+
+  <!-- Core JS -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script> <!-- jquery JS (https://jquery.com) -->
+
+  <!-- Libs and Plugins JS -->
+  <script src="assets/vendor/gsap/gsap.min.js"></script> <!-- GSAP JS (https://greensock.com/gsap/) -->
+  <script src="assets/vendor/gsap/ScrollToPlugin.min.js"></script>
+  <!-- GSAP ScrollToPlugin JS (https://greensock.com/scrolltoplugin/) -->
+  <script src="assets/vendor/gsap/ScrollTrigger.min.js"></script>
+  <!-- GSAP ScrollTrigger JS (https://greensock.com/scrolltrigger/) -->
+
+  <script src="assets/vendor/smooth-scrollbar.js"></script>
+  <!-- Smooth Scrollbar JS (https://github.com/idiotWu/smooth-scrollbar/) -->
+  <script src="assets/vendor/swiper/js/swiper-bundle.min.js"></script> <!-- Swiper JS (https://swiperjs.com/) -->
+  <script src="assets/vendor/isotope/imagesloaded.pkgd.min.js"></script>
+  <!-- imagesloaded JS (more info: https://imagesloaded.desandro.com/) -->
+  <script src="assets/vendor/isotope/isotope.pkgd.min.js"></script> <!-- Isotope JS (http://isotope.metafizzy.co) -->
+  <script src="assets/vendor/isotope/packery-mode.pkgd.min.js"></script>
+  <!-- Isotope Packery Mode JS (https://isotope.metafizzy.co/layout-modes/packery.html) -->
+  <script src="assets/vendor/lightgallery/js/lightgallery-all.min.js"></script>
+  <!-- lightGallery Plugins JS (http://sachinchoolur.github.io/lightGallery) -->
+  <script src="assets/vendor/jquery.mousewheel.min.js"></script>
+  <!-- A jQuery plugin that adds cross browser mouse wheel support (https://github.com/jquery/jquery-mousewheel) -->
+
+  <!-- Supabase JS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+  <!-- Template master JS -->
+  <script src="assets/js/theme.js"></script>
+
+  <!-- Custom Toast Notification Script -->
+  <script>
+    // Toast notification function
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toast-container');
+      if (!container) return;
+
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+
+      const icons = {
+        success: '<i class="fas fa-check-circle"></i>',
+        error: '<i class="fas fa-exclamation-circle"></i>',
+        warning: '<i class="fas fa-exclamation-triangle"></i>'
+      };
+
+      toast.innerHTML = `
+        <span class="toast-icon">${icons[type] || icons.success}</span>
+        <span class="toast-content">${message}</span>
+        <button class="toast-close" onclick="this.parentElement.remove()">&times;</button>
+      `;
+
+      container.appendChild(toast);
+
+      // Trigger animation
+      setTimeout(() => {
+        toast.classList.add('show');
+      }, 10);
+
+      // Auto remove after 5 seconds
+      setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => {
+          if (toast.parentElement) {
+            toast.remove();
+          }
+        }, 300);
+      }, 5000);
+    }
+  </script>
+
+  <!-- Supabase Contact Form Handler -->
+  <script>
+    // Supabase configuration
+    // IMPORTANT: Replace these values with your Supabase project credentials
+    // You can find them in your Supabase project settings: https://app.supabase.com/project/_/settings/api
+    const SUPABASE_URL = 'https://rwpcxffzumytpmocrwkd.supabase.co'; // e.g., 'https://rwpcxffzumytpmocrwkd.supabase.co'
+    const SUPABASE_ANON_KEY = 'sb_publishable_8yUvkrR-tlO8F0p3UjOvTg_A9mjnaZW'; // Your anon/public key
+
+    // Initialize Supabase client
+    // Note: Make sure Supabase SDK is loaded before this script
+    let supabaseClient;
+    if (typeof window.supabase !== 'undefined') {
+      supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    } else {
+      console.error('Supabase SDK not loaded! Please check the CDN link.');
+    }
+
+    // Form type selector handler
+    $(document).ready(function () {
+      // Ensure all forms are hidden on page load using CSS directly
+      // Do this immediately and also after a short delay to override any GSAP animations
+      $('.studio-form').css('display', 'none');
+      $('#form-descriptions').css('display', 'none');
+      $('.form-description').css('display', 'none');
+
+      // Double-check after a short delay (in case GSAP tries to animate them)
+      setTimeout(function () {
+        $('.studio-form').css('display', 'none');
+        $('#form-descriptions').css('display', 'none');
+        $('.form-description').css('display', 'none');
+      }, 100);
+
+      // Handle form type selection
+      $('#form-type-selector').on('change', function () {
+        const selectedType = $(this).val();
+        const formDescriptions = $('#form-descriptions');
+        const allDescriptions = $('.form-description');
+        const allForms = $('.studio-form');
+
+        // First, hide ALL forms and descriptions immediately
+        allForms.stop(true, true).hide();
+        allDescriptions.stop(true, true).hide();
+        formDescriptions.stop(true, true).hide();
+
+        // Show selected description and form with smooth animation
+        if (selectedType) {
+          const selectedDesc = $('#desc-' + selectedType);
+          const selectedForm = $('#form-' + selectedType);
+
+          // Show description
+          if (selectedDesc.length) {
+            formDescriptions.fadeIn(300);
+            selectedDesc.fadeIn(300);
+          }
+
+          // Show ONLY the selected form
+          if (selectedForm.length) {
+            // Ensure all other forms are hidden
+            allForms.not(selectedForm).stop(true, true).hide();
+            // Show the selected form with animation
+            selectedForm.fadeIn(400);
+          }
+        }
+      });
+
+      // Remove default form handlers and add new ones for each form
+      $('.studio-form').off('submit');
+
+      // Add Supabase form handlers for each form type
+      $('.studio-form').on('submit', async function (e) {
+        e.preventDefault();
+
+        const form = $(this);
+        const formId = form.attr('id');
+        const formType = formId.replace('form-', ''); // general, commission, appraisal, registry
+        const submitButton = form.find('button[type="submit"]');
+        const originalButtonText = submitButton.find('div[data-hover]').text();
+
+        // Disable submit button to prevent double submission
+        submitButton.prop('disabled', true);
+        submitButton.find('div[data-hover]').text('Sending...');
+
+        // Check if Supabase client is initialized
+        if (!supabaseClient) {
+          showToast('Configuration error: Unable to connect to the server. Please try again later.', 'error');
+          submitButton.prop('disabled', false);
+          submitButton.find('div[data-hover]').text(originalButtonText);
+          return false;
+        }
+
+        try {
+          // Get form data based on form type
+          let formData = {
+            created_at: new Date().toISOString()
+          };
+
+          // Collect all form fields
+          form.find('input, textarea, select').each(function () {
+            const field = $(this);
+            const name = field.attr('name');
+            const type = field.attr('type');
+
+            if (name && type !== 'file' && type !== 'submit' && type !== 'button') {
+              if (type === 'checkbox' || type === 'radio') {
+                if (field.is(':checked')) {
+                  formData[name] = field.val();
+                }
+              } else {
+                formData[name] = field.val();
+              }
+            }
+          });
+
+          // Determine table name based on form type
+          const tableMap = {
+            'general': 'general_inquiries',
+            'commission': 'commission_requests',
+            'appraisal': 'appraisal_requests',
+            'registry': 'registry_enrollments'
+          };
+
+          const tableName = tableMap[formType];
+
+          if (!tableName) {
+            throw new Error('Unknown form type: ' + formType);
+          }
+
+          // Insert data into Supabase
+          const { data, error } = await supabaseClient
+            .from(tableName)
+            .insert([formData]);
+
+          if (error) {
+            throw error;
+          }
+
+          // Success message
+          showToast('Success! Your request has been submitted. We will get back to you soon.', 'success');
+
+          // Reset form
+          setTimeout(function () {
+            form.trigger('reset');
+            submitButton.prop('disabled', false);
+            submitButton.find('div[data-hover]').text(originalButtonText);
+          }, 800);
+
+        } catch (error) {
+          console.error('Error submitting form:', error);
+          let errorMessage = 'Unable to submit your request. Please check your connection and try again.';
+          if (error.message) {
+            errorMessage = 'Submission failed: ' + error.message;
+          }
+          showToast(errorMessage, 'error');
+          submitButton.prop('disabled', false);
+          submitButton.find('div[data-hover]').text(originalButtonText);
+        }
+
+        return false;
+      });
+    });
+  </script>
+
+
+
+
+
+  <div id="wt-sky-root"></div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+</body>
+
+</html>
