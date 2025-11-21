@@ -3,12 +3,35 @@
 <head>
 
   <!-- Title -->
-  <title>Contact | JSE art</title>
+  <title>Contact | JSE art - Get in Touch</title>
 
   <!-- Meta -->
   <meta charset="utf-8">
-  <meta name="description" content="JSE art">
+  <meta name="description"
+    content="Contact JSE art - Get in touch for inquiries about artwork, collaborations, exhibitions, or commissions. Reach out to explore contemporary art that challenges perception.">
+  <meta name="keywords"
+    content="JSE art contact, art inquiries, art commissions, contemporary art contact, artist contact, art collaboration, art exhibitions">
   <meta name="author" content="JSE art">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://jse.art/contact.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jse.art/contact.html">
+  <meta property="og:title" content="Contact | JSE art - Get in Touch">
+  <meta property="og:description"
+    content="Contact JSE art for inquiries about artwork, collaborations, exhibitions, or commissions. Reach out to explore contemporary art.">
+  <meta property="og:image" content="https://jse.art/assets/img/hero.png">
+  <meta property="og:site_name" content="JSE art">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://jse.art/contact.html">
+  <meta name="twitter:title" content="Contact | JSE art - Get in Touch">
+  <meta name="twitter:description"
+    content="Contact JSE art for inquiries about artwork, collaborations, exhibitions, or commissions.">
+  <meta name="twitter:image" content="https://jse.art/assets/img/hero.png">
+
   <!-- Mobile Meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -608,73 +631,97 @@
 
                       <!-- Custom Commission Form -->
                       <form id="form-commission" class="studio-form tt-form-filled" style="display: none;">
+                        <!-- Client Full Name and Email in one row -->
                         <div class="tt-row">
                           <div class="tt-col-md-6">
                             <div class="tt-form-group">
-                              <label>Your Name <span class="required">*</span></label>
-                              <input class="tt-form-control" type="text" name="name" placeholder="" required="">
-                            </div>
-                          </div>
-                          <div class="tt-col-md-6">
-                            <div class="tt-form-group">
-                              <label>Email address <span class="required">*</span></label>
-                              <input class="tt-form-control" type="email" name="email" placeholder="" required="">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="tt-form-group">
-                          <label>Purpose <span class="required">*</span></label>
-                          <input class="tt-form-control" type="text" name="purpose"
-                            placeholder="e.g., Personal collection, Corporate gift, etc." required="">
-                        </div>
-                        <div class="tt-form-group">
-                          <label>Recipient <span class="required">*</span></label>
-                          <input class="tt-form-control" type="text" name="recipient"
-                            placeholder="Who is this artwork for?" required="">
-                        </div>
-                        <div class="tt-row">
-                          <div class="tt-col-md-6">
-                            <div class="tt-form-group">
-                              <label>Size <span class="required">*</span></label>
-                              <input class="tt-form-control" type="text" name="size" placeholder="e.g., 24x36 inches"
+                              <label>Client Full Name <span class="required">*</span></label>
+                              <input class="tt-form-control" type="text" name="client_full_name" placeholder=""
                                 required="">
                             </div>
                           </div>
                           <div class="tt-col-md-6">
                             <div class="tt-form-group">
-                              <label>Medium <span class="required">*</span></label>
-                              <input class="tt-form-control" type="text" name="medium"
-                                placeholder="e.g., Oil on canvas, Digital print" required="">
+                              <label>Email <span class="required">*</span></label>
+                              <input class="tt-form-control" type="email" name="email" placeholder="" required="">
                             </div>
                           </div>
                         </div>
-                        <div class="tt-form-group">
-                          <label>Display Context <span class="required">*</span></label>
-                          <textarea class="tt-form-control" rows="3" name="display_context"
-                            placeholder="Where will this artwork be displayed?" required=""></textarea>
+
+                        <!-- Phone number and City / Country in one row -->
+                        <div class="tt-row">
+                          <div class="tt-col-md-6">
+                            <div class="tt-form-group">
+                              <label>Phone number <span class="required">*</span></label>
+                              <input class="tt-form-control" type="tel" name="phone_number" placeholder="" required="">
+                            </div>
+                          </div>
+                          <div class="tt-col-md-6">
+                            <div class="tt-form-group">
+                              <label>City / Country <span class="required">*</span></label>
+                              <input class="tt-form-control" type="text" name="city_country" placeholder="" required="">
+                            </div>
+                          </div>
                         </div>
+
+                        <!-- Profession / Industry -->
                         <div class="tt-form-group">
-                          <label>COA Registration Preference <span class="required">*</span></label>
-                          <select class="tt-form-control" name="coa_registration" required="">
-                            <option value=""  selected="">Please choose an option</option>
-                            <option value="Yes">Yes, I want COA registration</option>
-                            <option value="No">No, I don't need COA registration</option>
-                          </select>
+                          <label>Profession / Industry <span class="required">*</span></label>
+                          <input class="tt-form-control" type="text" name="profession_industry" placeholder=""
+                            required="">
                         </div>
+
+                        <!-- How did you hear about JSE.art? -->
                         <div class="tt-form-group">
-                          <label>Ownership Preferences <span class="required">*</span></label>
-                          <select class="tt-form-control" name="ownership_preference" required="">
+                          <label>How did you hear about JSE.art? <span class="required">*</span></label>
+                          <select class="tt-form-control" name="hear_about" required="">
                             <option value="" selected="">Please choose an option</option>
-                            <option value="Sole ownership">Sole ownership</option>
-                            <option value="Shared ownership">Shared ownership</option>
-                            <option value="Corporate ownership">Corporate ownership</option>
+                            <option value="Social Media (Inst. TikTok, Pinterest)">Social Media (Inst. TikTok,
+                              Pinterest)</option>
+                            <option value="Online Search">Online Search</option>
+                            <option value="Gallery / Exhibition / Event">Gallery / Exhibition / Event</option>
+                            <option value="Referral">Referral</option>
+                            <option value="Other">Other</option>
                           </select>
                         </div>
+
+                        <!-- Divider -->
+                        <div class="form-divider margin-top-40 margin-bottom-40"
+                          style="height: 1px; background: rgba(255, 255, 255, 0.1);"></div>
+
+                        <!-- RECIPIENT INFORMATION Section -->
+                        <h3 class="tt-heading-title margin-bottom-30" style="font-size: 24px;">RECIPIENT INFORMATION
+                        </h3>
+
+                        <!-- Who is this commission for? -->
                         <div class="tt-form-group">
-                          <label>Additional Notes</label>
-                          <textarea class="tt-form-control" rows="4" name="additional_notes"
-                            placeholder="Any additional information or special requests"></textarea>
+                          <label>Who is this commission for? <span class="required">*</span></label>
+                          <select class="tt-form-control" name="commission_for" required="">
+                            <option value="" selected="">Please choose an option</option>
+                            <option value="Myself">Myself</option>
+                            <option value="Personal (e.g. Friend, Family, Partner, etc)">Personal (e.g. Friend, Family,
+                              Partner, etc)</option>
+                            <option value="Professional (e.g. Colleague, Client, Employer, Organization, etc)">
+                              Professional (e.g. Colleague, Client, Employer, Organization, etc)</option>
+                            <option value="Other">Other* (pls provide additional info in part E)</option>
+                          </select>
                         </div>
+
+                        <!-- Relationship to recipient -->
+                        <div class="tt-form-group">
+                          <label>If applicable, what is your relationship to recipient (e.g. "My sister." "My former
+                            professor," "Our company founder")</label>
+                          <input class="tt-form-control" type="text" name="relationship_to_recipient" placeholder="">
+                        </div>
+
+                        <!-- Recipient Full Name -->
+                        <div class="tt-form-group">
+                          <label>Recipient Full Name (or Company Name if applicable) <span
+                              class="required">*</span></label>
+                          <input class="tt-form-control" type="text" name="recipient_full_name" placeholder=""
+                            required="">
+                        </div>
+
                         <small class="tt-form-text"><em>Fields marked with an asterisk (*) are required!</em></small>
                         <button type="submit" class="tt-btn tt-btn-primary margin-top-30">
                           <div data-hover="Submit Commission Request">Submit Commission Request</div>
@@ -714,11 +761,27 @@
                             </div>
                           </div>
                         </div>
-                        <div class="tt-form-group">
-                          <label>Upload Proof of Purchase or Previous COA</label>
-                          <input class="tt-form-control" type="file" name="proof_file"
-                            accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
-                          <small class="tt-form-text">Accepted formats: PDF, JPG, PNG, DOC, DOCX (Max 10MB)</small>
+                        <div class="tt-row">
+                          <div class="tt-col-md-6">
+                            <div class="tt-form-group">
+                              <label>Do you have receipt / proof of purchase?</label>
+                              <select class="tt-form-control" name="has_receipt">
+                                <option value="" selected="">Please choose an option</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="tt-col-md-6">
+                            <div class="tt-form-group">
+                              <label>Do you have a COA associated with this piece?</label>
+                              <select class="tt-form-control" name="has_coa">
+                                <option value="" selected="">Please choose an option</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                              </select>
+                            </div>
+                          </div>
                         </div>
                         <div class="tt-form-group">
                           <label>Condition Notes <span class="required">*</span></label>
@@ -728,7 +791,7 @@
                         <div class="tt-form-group">
                           <label>Purpose of Appraisal <span class="required">*</span></label>
                           <select class="tt-form-control" name="appraisal_purpose" required="">
-                            <option value=""  selected="">Please choose an option</option>
+                            <option value="" selected="">Please choose an option</option>
                             <option value="Insurance">Insurance</option>
                             <option value="Exhibition">Exhibition</option>
                             <option value="Sale">Sale</option>
@@ -788,7 +851,7 @@
                         <div class="tt-form-group">
                           <label>Consent for Inclusion in Registry <span class="required">*</span></label>
                           <select class="tt-form-control" name="registry_consent" required="">
-                            <option value=""  selected="">Please choose an option</option>
+                            <option value="" selected="">Please choose an option</option>
                             <option value="Public">Public - My name can be listed publicly</option>
                             <option value="Anonymous">Anonymous - Include me but keep my name private</option>
                             <option value="Opt-out">Opt-out - Do not include me in the registry</option>
@@ -797,7 +860,7 @@
                         <div class="tt-form-group">
                           <label>Opt-in for Annual Appraisal <span class="required">*</span></label>
                           <select class="tt-form-control" name="annual_appraisal" required="">
-                            <option value=""   selected="">Please choose an option</option>
+                            <option value="" selected="">Please choose an option</option>
                             <option value="Yes">Yes, I want annual appraisals</option>
                             <option value="No">No, I don't need annual appraisals</option>
                           </select>

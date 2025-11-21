@@ -1,0 +1,27 @@
+# robots.txt for JSE art website
+# https://jse.art
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow crawling of admin/private areas (if any exist in future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Disallow crawling of vendor/asset directories (not needed for SEO)
+Disallow: /assets/vendor/
+Disallow: /assets/font/
+
+# Allow important assets for SEO
+Allow: /assets/img/
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/vids/
+
+# Sitemap location
+Sitemap: https://jse.art/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+# Crawl-delay: 1
+

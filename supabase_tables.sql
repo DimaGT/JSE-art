@@ -22,16 +22,17 @@ CREATE TABLE IF NOT EXISTS general_inquiries (
 -- ============================================
 CREATE TABLE IF NOT EXISTS commission_requests (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  name TEXT NOT NULL,
+  -- Client Information Section
+  client_full_name TEXT NOT NULL,
   email TEXT NOT NULL,
-  purpose TEXT NOT NULL,
-  recipient TEXT NOT NULL,
-  size TEXT NOT NULL,
-  medium TEXT NOT NULL,
-  display_context TEXT NOT NULL,
-  coa_registration TEXT NOT NULL,
-  ownership_preference TEXT NOT NULL,
-  additional_notes TEXT,
+  phone_number TEXT NOT NULL,
+  city_country TEXT NOT NULL,
+  profession_industry TEXT NOT NULL,
+  hear_about TEXT NOT NULL,
+  -- Recipient Information Section
+  commission_for TEXT NOT NULL,
+  relationship_to_recipient TEXT,
+  recipient_full_name TEXT NOT NULL,
   created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
@@ -44,7 +45,8 @@ CREATE TABLE IF NOT EXISTS appraisal_requests (
   email TEXT NOT NULL,
   phone TEXT,
   artwork_title TEXT NOT NULL,
-  proof_file TEXT,
+  has_receipt TEXT,
+  has_coa TEXT,
   condition_notes TEXT NOT NULL,
   appraisal_purpose TEXT NOT NULL,
   additional_info TEXT,
@@ -115,6 +117,7 @@ CREATE INDEX IF NOT EXISTS idx_general_inquiries_email ON general_inquiries(emai
 
 CREATE INDEX IF NOT EXISTS idx_commission_requests_created_at ON commission_requests(created_at DESC);
 CREATE INDEX IF NOT EXISTS idx_commission_requests_email ON commission_requests(email);
+CREATE INDEX IF NOT EXISTS idx_commission_requests_client_name ON commission_requests(client_full_name);
 
 CREATE INDEX IF NOT EXISTS idx_appraisal_requests_created_at ON appraisal_requests(created_at DESC);
 CREATE INDEX IF NOT EXISTS idx_appraisal_requests_email ON appraisal_requests(email);
